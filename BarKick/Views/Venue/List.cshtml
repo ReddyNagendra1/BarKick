@@ -1,0 +1,12 @@
+﻿﻿@model IEnumerable<BarKick.Models.VenueDto>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Venues</h2>
+<a href="/Venue/New">New Venue</a>
+@foreach (var venue in Model)
+{
+    <h2><a href="/Venue/Details/@venue.VenueID">@venue.VenueName</a></h2>
+}

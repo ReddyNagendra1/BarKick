@@ -1,0 +1,24 @@
+﻿﻿@model BarKick.Models.VenueDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Venue</h2>
+
+<form action="/Venue/Update/@Model.VenueID" method="POST">
+    <input type="hidden" name="VenueID" value="@Model.VenueID" />
+    <div>
+        <label>Name: </label><input type="text" name="VenueName" value="@Model.VenueName" />
+    </div>
+    <div>
+        <label>Location: </label><textarea name="VenueLocation">@Model.VenueLocation</textarea>
+    </div>
+    <div>
+        <input type="submit" value="Update Venue" />
+    </div>
+</form>
+<div>
+    <a href="/Venue/List">Back to List</a> |
+    <a href="/Venue/DeleteConfirm/@Model.VenueID">Delete</a>
+</div>

@@ -1,0 +1,22 @@
+﻿﻿@model BarKick.Models.ViewModels.AddTeamToVenueViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<nav>
+    <ul>
+        <li><a href="/Venue/List">Go back to list</a></li>
+        <li><a href="/Venue/Edit/@Model.Venue.VenueID">Edit</a></li>
+        <li><a style="color:#ab2020;" href="/Venue/DeleteConfirm/@Model.Venue.VenueID">Delete</a></li>
+    </ul>
+</nav>
+
+<h2>@Model.Venue.VenueName</h2>
+<div>Location: @Model.Venue.VenueLocation</div>
+<div>
+    @foreach (var team in Model.Teams)
+    {
+        <h2><a href="/Team/Details/@team.TeamID">@team.TeamName</a></h2>
+    }
+</div>

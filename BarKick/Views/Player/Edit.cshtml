@@ -1,0 +1,35 @@
+﻿﻿@model BarKick.Models.PlayerDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+
+<h2>UpdatePlayer</h2>
+
+<form action="/Player/Update/@Model.PlayerID" method="POST">
+    <input type="hidden" name="PlayerID" value="@Model.PlayerID" />
+    <div>
+        <label>Name: </label><input type="text" name="PlayerName" value="@Model.PlayerName" />
+    </div>
+    <div>
+        <label>Position: </label><input type="text" name="PlayerPosition" value="@Model.PlayerPosition" />
+    </div>
+    <div>
+        <label>Team: </label>
+        <select name="TeamID">
+            @foreach (var team in ViewBag.Teams)
+            {
+                <option value="@team.TeamID" @(team.TeamID == Model.TeamID ? "selected" : "")>@team.TeamName</option>
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update Player" />
+    </div>
+</form>
+<div>
+    <a href="/Player/List">Back to List</a> |
+    <a href="/Player/DeleteConfirm/@Model.PlayerID">Delete</a>
+</div>

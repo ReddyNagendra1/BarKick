@@ -1,0 +1,19 @@
+﻿﻿@model BarKick.Models.PlayerDto
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<nav>
+    <ul>
+        <li><a href="/Player/List">Go back to list</a></li>
+        <li><a href="/Player/Edit/@Model.PlayerID">Edit</a></li>
+        <li><a style="color:#ab2020;" href="/Player/DeleteConfirm/@Model.PlayerID">Delete</a></li>
+    </ul>
+</nav>
+
+<h2>@Model.PlayerName</h2>
+<div>Position: @Model.PlayerPosition</div>
+<div>Team: @Model.TeamName</div>

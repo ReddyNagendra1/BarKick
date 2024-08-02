@@ -188,6 +188,12 @@
     <Compile Include="Controllers\CocktailDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PlayerController.cs" />
+    <Compile Include="Controllers\PlayerDataController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\TeamDataController.cs" />
+    <Compile Include="Controllers\VenueController.cs" />
+    <Compile Include="Controllers\VenueDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,6 +229,10 @@
     <Compile Include="Migrations\202408020608444_BartenderVenue.Designer.cs">
       <DependentUpon>202408020608444_BartenderVenue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408020830488_update.cs" />
+    <Compile Include="Migrations\202408020830488_update.Designer.cs">
+      <DependentUpon>202408020830488_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bartender.cs" />
@@ -232,6 +242,7 @@
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\Venue.cs" />
+    <Compile Include="Models\ViewModels\AddTeamToVenueViewModel.cs" />
     <Compile Include="Models\ViewModels\DetailsBartender.cs" />
     <Compile Include="Models\ViewModels\DetailsCocktail.cs" />
     <Compile Include="Models\ViewModels\ListCocktailsViewModel.cs" />
@@ -322,6 +333,24 @@
     <Content Include="Views\Bartender\Error.cshtml" />
     <Content Include="Views\Bartender\List.cshtml" />
     <Content Include="Views\Bartender\New.cshtml" />
+    <Content Include="Views\Player\DeleteConfirm.cshtml" />
+    <Content Include="Views\Player\Details.cshtml" />
+    <Content Include="Views\Player\Edit.cshtml" />
+    <Content Include="Views\Player\Error.cshtml" />
+    <Content Include="Views\Player\List.cshtml" />
+    <Content Include="Views\Player\New.cshtml" />
+    <Content Include="Views\Team\Create.cshtml" />
+    <Content Include="Views\Team\DeleteConfirm.cshtml" />
+    <Content Include="Views\Team\Details.cshtml" />
+    <Content Include="Views\Team\Edit.cshtml" />
+    <Content Include="Views\Team\Error.cshtml" />
+    <Content Include="Views\Team\List.cshtml" />
+    <Content Include="Views\Venue\DeleteConfirm.cshtml" />
+    <Content Include="Views\Venue\Details.cshtml" />
+    <Content Include="Views\Venue\Edit.cshtml" />
+    <Content Include="Views\Venue\Error.cshtml" />
+    <Content Include="Views\Venue\List.cshtml" />
+    <Content Include="Views\Venue\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -377,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408020608444_BartenderVenue.resx">
       <DependentUpon>202408020608444_BartenderVenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408020830488_update.resx">
+      <DependentUpon>202408020830488_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

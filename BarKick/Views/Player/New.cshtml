@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Player</h2>
+<form action="/Player/Create" method="POST">
+    <div>
+        <label>Name: </label><input type="text" name="PlayerName" />
+    </div>
+    <div>
+        <label>Position: </label><input type="text" name="PlayerPosition" />
+    </div>
+    <div>
+        <label>Team: </label>
+        <select name="TeamID">
+            @foreach (var team in ViewBag.Teams as List<BarKick.Models.Team>)
+            {
+                <option value="@team.TeamID">@team.TeamName</option>
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Player" />
+    </div>
+</form>
