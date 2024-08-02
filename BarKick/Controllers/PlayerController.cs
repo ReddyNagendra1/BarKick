@@ -1,5 +1,4 @@
-﻿using BarKick.Migrations;
-using BarKick.Models;
+﻿using BarKick.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

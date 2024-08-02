@@ -30,10 +30,31 @@ namespace BarKick.Models
         public DbSet<Venue> Venues { get; set; }
         public DbSet<Cocktail> Cocktails { get; set; }
         public DbSet<Bartender> Bartenders { get; set; }
+        public DbSet<VenueBartender> VenueBartenders { get; set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Define the composite primary key for VenueBartender
+            modelBuilder.Entity<VenueBartender>()
+                .HasKey(vb => new { vb.BartenderId, vb.VenueID });
+
+            // Define the relationships
+            modelBuilder.Entity<VenueBartender>()
+                .HasRequired(vb => vb.Bartender)
+                .WithMany(b => b.VenueBartenders)
+                .HasForeignKey(vb => vb.BartenderId);
+
+            modelBuilder.Entity<VenueBartender>()
+                .HasRequired(vb => vb.Venue)
+                .WithMany(v => v.VenueBartenders)
+                .HasForeignKey(vb => vb.VenueID);
+        } 
     }
 }

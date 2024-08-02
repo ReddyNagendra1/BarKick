@@ -1,3 +1,5 @@
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.AssemblyReference.cache
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.CoreCompileInputs.cache
 C:\Users\deryn\source\repos\BarKick\BarKick\bin\BarKick.dll.config
 C:\Users\deryn\source\repos\BarKick\BarKick\bin\BarKick.dll
 C:\Users\deryn\source\repos\BarKick\BarKick\bin\BarKick.pdb
@@ -107,18 +109,8 @@ C:\Users\deryn\source\repos\BarKick\BarKick\bin\Microsoft.Owin.Security.Twitter.
 C:\Users\deryn\source\repos\BarKick\BarKick\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\deryn\source\repos\BarKick\BarKick\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\deryn\source\repos\BarKick\BarKick\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.AssemblyReference.cache
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.CoreCompileInputs.cache
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.Up2Date
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.dll
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.pdb
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.InitialCreate.resources
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.GenerateResource.cache
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.PlayerModel.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.playerTeamKey.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.FixedColName.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.Venues.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.TeamtoVenue.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.CocktailnBartender.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.BartenderVenue.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.update.resources

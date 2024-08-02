@@ -9,7 +9,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using BarKick.Migrations;
 using BarKick.Models;
 
 
@@ -128,7 +127,7 @@ namespace BarKick.Controllers
         /// <example>
         /// POST: api/VenueData/AddVenue
         /// </example>
-        [ResponseType(typeof(Venues))]
+        [ResponseType(typeof(Venue))]
         [HttpPost]
         public IHttpActionResult AddVenue(Venue venue)
         {
@@ -151,7 +150,7 @@ namespace BarKick.Controllers
         /// <example>
         /// POST: api/VenueData/DeleteVenue/5
         /// </example>
-        [ResponseType(typeof(Venues))]
+        [ResponseType(typeof(Venue))]
         [HttpPost]
         public IHttpActionResult DeleteVenue(int id)
         {

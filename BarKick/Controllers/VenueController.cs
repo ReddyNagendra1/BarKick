@@ -50,6 +50,7 @@ namespace BarKick.Controllers
             return View(ViewModel);
         }
 
+
         // GET: Venue/New
         public ActionResult New()
         {
