@@ -1,0 +1,32 @@
+﻿﻿@model List<BarKick.Models.BartenderDto>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Bartenders</h2>
+<a href="~/Bartender/New">Add a New Bartender!</a>
+
+@if (Model.Any())
+{
+    <div id="bartender-list">
+        @foreach (var bartender in Model)
+        {
+            <div>
+                <a href="~/Bartender/Details/@bartender.BartenderId">
+                    @bartender.FirstName @bartender.LastName
+                </a>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No bartenders found.</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p>@ViewBag.ErrorMessage</p>
+}

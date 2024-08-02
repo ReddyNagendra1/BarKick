@@ -1,0 +1,36 @@
+﻿﻿@model IEnumerable<BarKick.Models.BartenderDto>
+@{
+    ViewBag.Title = "Create";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add a Cocktail</h2>
+<form action="/Cocktail/Create" method="POST">
+    <div>
+        <label for="drinkNameInput">Cocktail Name:</label>
+        <input type="text" id="drinkNameInput" name="DrinkName" required />
+    </div>
+    <div>
+        <label for="drinkRecipeInput">Recipe:</label>
+        <input type="text" id="drinkRecipeInput" name="DrinkRecipe" required />
+    </div>
+    <div>
+        <label for="liqInInput">Alcoholic Ingredients:</label>
+        <input type="text" id="liqInInput" name="LiqIn" required />
+    </div>
+    <div>
+        <label for="mixInInput">Mix Ingredients:</label>
+        <input type="text" id="mixInInput" name="MixIn" required />
+    </div>
+    <div>
+        <label for="bartenderIdInput">Select Bartender:</label>
+        <select id="bartenderIdInput" name="BartenderId" required>
+            <option disabled selected hidden>--Select-Bartender--</option>
+            @foreach (var bartender in Model)
+            {
+                <option value="@bartender.BartenderId">@bartender.FirstName @bartender.LastName</option>
+            }
+        </select>
+    </div>
+    <button type="submit">Add Cocktail</button>
+</form>

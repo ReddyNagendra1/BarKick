@@ -1,0 +1,32 @@
+﻿﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create a Bartender</title>
+</head>
+<body>
+    <h1>Create a Bartender</h1>
+    <form action="/Bartender/Create" method="POST">
+        <div>
+            <label>First Name:</label> <input type="text" name="FirstName" />
+        </div>
+        <div>
+            <label>Last Name:</label> <input type="text" name="LastName" />
+        </div>
+        <div>
+            <label>Email:</label> <input type="text" name="Email" />
+        </div>
+        <div>
+            <input type="submit" value="Create Bartender" />
+
+        </div>
+    </form>
+</body>
+</html>

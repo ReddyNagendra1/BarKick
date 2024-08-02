@@ -1,0 +1,35 @@
+﻿﻿@model BarKick.Models.BartenderDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update Bartender</title>
+</head>
+<body>
+    <div>
+        <h2>Update Bartender</h2>
+        <form action="/Bartender/Update/@Model.BartenderId" method="POST">
+            <div style="display:none;">
+                <input type="text" name="BartenderId" value="@Model.BartenderId" />
+            </div>
+            <div>
+                <label>First Name:</label> <input type="text" name="FirstName" value="@Model.FirstName" />
+            </div>
+            <div>
+                <label>Last Name:</label> <input type="text" name="LastName" value="@Model.LastName" />
+            </div>
+            <div>
+                <label>Email:</label> <input type="email" name="Email" value="@Model.Email" />
+            </div>
+            <div>
+                <input type="submit" value="Update Bartender" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

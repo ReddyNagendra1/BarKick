@@ -1,0 +1,43 @@
+﻿﻿@model BarKick.Models.ViewModels.DetailsBartender
+
+@{
+    ViewBag.Title = "Bartender Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Bartender Details</h1>
+<h3><a class="btn-primary" href="~/Bartender/Edit/@Model.SelectedBartender.BartenderId">Update Bartender</a></h3>
+<h3><a class="btn-danger" href="~/Bartender/DeleteConfirm/@Model.SelectedBartender.BartenderId">Delete Bartender</a></h3>
+<h4><a class="btn-info" href="~/Bartender/List"> Return to Bartender List</a></h4>
+
+@if (Model.SelectedBartender != null)
+{
+    <div>
+        Name: @Model.SelectedBartender.FirstName @Model.SelectedBartender.LastName
+    </div>
+    <div>
+        Email: @Model.SelectedBartender.Email
+    </div>
+    if (Model.CocktailsMade.Any())
+    {
+        <div style="margin-top: 20px;">
+            <h4>Cocktails Created By @Model.SelectedBartender.FirstName</h4>
+            <ul>
+                @foreach (var cocktail in Model.CocktailsMade)
+                {
+                    <li>
+                        <a href="/Cocktail/Details/@cocktail.DrinkId">@cocktail.DrinkName</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        <p>No cocktails created by @Model.SelectedBartender.FirstName found.</p>
+    }
+}
+else
+{
+    <p>@ViewBag.ErrorMessage</p>
+}

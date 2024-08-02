@@ -1,0 +1,32 @@
+﻿@model BarKick.Models.ViewModels.DetailsCocktail
+
+@{
+    ViewBag.Title = "Cocktail Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cocktail Details</h2>
+<h3><a class="btn-primary" href="~/Cocktail/Edit/@Model.SelectedCocktail.DrinkId">Update Cocktail</a></h3>
+<h3>
+    <a class="btn-danger" href="~/Cocktail/DeleteConfirm/@Model.SelectedCocktail.DrinkId">Delete Cocktail</a></h3.danger>
+    <h4><a class="btn-info" href="~/Cocktail/List"> Return to Cocktail List</a></h4>
+
+    @if (Model.SelectedCocktail != null)
+    {
+        <p>
+            Drink Name: @Model.SelectedCocktail.DrinkName
+            <br />
+            Drink Recipe: @Model.SelectedCocktail.DrinkRecipe
+            <br />
+            Alcoholic Ingredient: @Model.SelectedCocktail.LiqIn
+            <br />
+            Mix Ingredients: @Model.SelectedCocktail.MixIn
+            <br />
+            Created by: <a href="~/Bartender/Details/@Model.SelectedCocktail.BartenderId">@(Model.SelectedCocktail.FirstName + " " + Model.SelectedCocktail.LastName)</a>
+
+        </p>
+    }
+    else
+    {
+        <p>@ViewBag.ErrorMessage</p>
+    }

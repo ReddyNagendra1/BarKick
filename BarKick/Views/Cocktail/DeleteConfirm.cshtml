@@ -1,0 +1,26 @@
+﻿﻿@model BarKick.Models.CocktailDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete Confirm</title>
+</head>
+<body>
+    <div>
+        <h2>Are you sure you want to remove this cocktail?</h2>
+        <a href="/Cocktail/List">Cancel</a>
+        <h2>@Model.DrinkName by @Model.FirstName @Model.LastName</h2>
+
+        <form action="/cocktail/Delete/@Model.DrinkId" method="POST">
+            <input type="submit" value="Confirm Delete" />
+
+        </form>
+    </div>
+</body>
+</html>
