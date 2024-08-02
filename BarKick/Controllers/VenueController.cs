@@ -19,7 +19,7 @@ namespace BarKick.Controllers
         static VenueController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44338/api/");
+            client.BaseAddress = new Uri("https://localhost:44335/api/");
         }
 
         // GET: Venue/List
