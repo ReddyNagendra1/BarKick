@@ -1,4 +1,4 @@
-﻿﻿
+﻿﻿@model BarKick.Models.ViewModels.DetailsBartender﻿
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,6 +22,16 @@
         </div>
         <div>
             <label>Email:</label> <input type="text" name="Email" />
+        </div>
+        <div>
+            <label for="VenueIDInput">Select Venue:</label>
+            <select id="VenueIDInput" name="VenueID" required>
+                <option disabled selected hidden>--Select-Venue--</option>
+                @foreach (var venue in Model.VenueBartenders)
+                {
+                    <option value="@venue.VenueID">@venue.Venue.VenueName (@venue.Venue.VenueLocation)</option>
+                }
+            </select>
         </div>
         <div>
             <input type="submit" value="Create Bartender" />

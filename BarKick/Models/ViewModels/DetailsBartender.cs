@@ -6,5 +6,6 @@ namespace BarKick.Models.ViewModels
     {
         public BartenderDto SelectedBartender { get; set; }
         public IEnumerable<CocktailDto> CocktailsMade { get; set; }
+        public virtual ICollection<VenueBartender> VenueBartenders { get; set; }
     }
 }

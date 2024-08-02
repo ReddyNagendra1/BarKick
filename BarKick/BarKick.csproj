@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202408021533529_InitialCreate.Designer.cs">
       <DependentUpon>202408021533529_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408021549284_VenuesinBartenderDetailsViewModel.cs" />
+    <Compile Include="Migrations\202408021549284_VenuesinBartenderDetailsViewModel.Designer.cs">
+      <DependentUpon>202408021549284_VenuesinBartenderDetailsViewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bartender.cs" />
@@ -354,6 +358,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202408021533529_InitialCreate.resx">
       <DependentUpon>202408021533529_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408021549284_VenuesinBartenderDetailsViewModel.resx">
+      <DependentUpon>202408021549284_VenuesinBartenderDetailsViewModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
