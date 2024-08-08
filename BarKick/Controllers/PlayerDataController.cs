@@ -56,10 +56,18 @@ namespace BarKick.Controllers
         /// </example>
 
         [HttpGet]
+        [Route("api/PlayerData/FindPlayer/{id}")]
         [ResponseType(typeof(Player))]
         public IHttpActionResult FindPlayer(int id)
         {
+            Debug.WriteLine("FindPlayer method called with ID: " + id);
+
             Player Player = db.Players.Find(id);
+
+            if (Player == null)
+            {
+                return NotFound();
+            }
 
             PlayerDto PlayerDto = new PlayerDto()
             {
@@ -69,10 +77,9 @@ namespace BarKick.Controllers
                 TeamID = Player.Team.TeamID,
                 TeamName = Player.Team.TeamName
             };
-            if (Player == null)
-            {
-                return NotFound();
-            }
+
+            Debug.WriteLine("Player found: " + PlayerDto.PlayerName);
+
 
             return Ok(PlayerDto);
         }
@@ -87,8 +94,9 @@ namespace BarKick.Controllers
         /// POST: api/PlayerData/UpdatePlayer/5
         /// </example>
         // POST: api/PlayerData/UpdatePlayer/5
-        [ResponseType(typeof(void))]
         [HttpPost]
+        [Route("api/PlayerData/UpdatePlayer/{id}")]
+        [ResponseType(typeof(void))]
         public IHttpActionResult UpdatePlayer(int id, Player player)
         {
             Debug.WriteLine("I have reached the update player method");
@@ -137,9 +145,9 @@ namespace BarKick.Controllers
         /// <example>
         /// POST: api/PlayerData/AddPlayer
         /// </example>
-
-        [ResponseType(typeof(Player))]
         [HttpPost]
+        [Route("api/PlayerData/AddPlayer")]
+        [ResponseType(typeof(Player))]
         public IHttpActionResult AddPlayer(Player player)
         {
             if (!ModelState.IsValid)
@@ -169,8 +177,10 @@ namespace BarKick.Controllers
         /// POST: api/PlayerData/DeletePlayer/5
         /// </example>
         // DELETE: api/PlayerData/DeletePlayer/5
-        [ResponseType(typeof(Player))]
         [HttpPost]
+        [Route("api/PlayerData/DeletePlayer/{id}")]
+        [ResponseType(typeof(Player))]
+        
         public IHttpActionResult DeletePlayer(int id)
         {
             Player player = db.Players.Find(id);

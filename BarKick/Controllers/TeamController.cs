@@ -1,7 +1,9 @@
 ﻿using BarKick.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
@@ -33,7 +35,10 @@ namespace BarKick.Controllers
         {
             string url = "TeamData/FindTeam/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
+
+            Debug.Write(response);
             TeamDto selectedTeam = response.Content.ReadAsAsync<TeamDto>().Result;
+
             return View(selectedTeam);
         }
 
@@ -52,7 +57,15 @@ namespace BarKick.Controllers
             HttpContent content = new StringContent(jsonPayload);
             content.Headers.ContentType.MediaType = "application/json";
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-            return RedirectToAction("List");
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("List");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Unable to create team. Try again later.");
+                return View(teamDto);
+            }
         }
 
         // GET: Team/Edit/5
@@ -68,6 +81,11 @@ namespace BarKick.Controllers
         [HttpPost]
         public ActionResult Update(int id, TeamDto teamDto)
         {
+            if (id != teamDto.TeamID)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             string url = "TeamData/UpdateTeam/" + id;
             string jsonPayload = jss.Serialize(teamDto);
             HttpContent content = new StringContent(jsonPayload);
@@ -83,7 +101,7 @@ namespace BarKick.Controllers
             {
                 // Handle the error response appropriately
                 ModelState.AddModelError("", "Unable to save changes. Try again later.");
-                return View(teamDto);
+                return View("Update", teamDto); // Return the Update view with the model in case of an error
             }
         }
 

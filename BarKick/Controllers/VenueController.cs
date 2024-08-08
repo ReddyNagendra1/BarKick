@@ -61,12 +61,26 @@ namespace BarKick.Controllers
         [HttpPost]
         public ActionResult Create(VenueDto venueDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(venueDto); // Returning the view with the model to display validation errors
+            }
+
             string url = "VenueData/AddVenue";
             string jsonPayload = jss.Serialize(venueDto);
             HttpContent content = new StringContent(jsonPayload);
             content.Headers.ContentType.MediaType = "application/json";
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-            return RedirectToAction("List");
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("List");
+            }
+            else
+            {
+                // Handling the error here and returning the view with model
+                ModelState.AddModelError("", "Unable to create venue. Try again later.");
+                return View(venueDto);
+            }
         }
 
         // GET: Venue/Edit/5
@@ -87,7 +101,15 @@ namespace BarKick.Controllers
             HttpContent content = new StringContent(jsonPayload);
             content.Headers.ContentType.MediaType = "application/json";
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-            return RedirectToAction("List");
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("List");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Unable to update venue. Try again later.");
+                return View("Edit", venueDto);
+            }
         }
 
         // GET: Venue/DeleteConfirm/5

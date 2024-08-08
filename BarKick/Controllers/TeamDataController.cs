@@ -52,6 +52,7 @@ namespace BarKick.Controllers
         /// GET: api/TeamData/FindTeam/12
         /// </example>
         [HttpGet]
+        [Route("api/TeamData/FindTeam/{id}")]
         [ResponseType(typeof(TeamDto))]
         public IHttpActionResult FindTeam(int id)
         {
@@ -81,8 +82,10 @@ namespace BarKick.Controllers
         /// <example>
         /// POST: api/TeamData/UpdateTeam/5
         /// </example>
-        [ResponseType(typeof(void))]
         [HttpPost]
+        [Route("api/TeamData/AddTeam")]
+        [ResponseType(typeof(void))]
+       
         public IHttpActionResult UpdateTeam(int id, Team team)
         {
             Debug.WriteLine("I have reached the update team method");
@@ -129,8 +132,10 @@ namespace BarKick.Controllers
         /// <example>
         /// POST: api/TeamData/AddTeam
         /// </example>
-        [ResponseType(typeof(Team))]
         [HttpPost]
+        [Route("api/TeamData/UpdateTeam/{id}")]
+        [ResponseType(typeof(Team))]
+       
         public IHttpActionResult AddTeam(Team team)
         {
             if (!ModelState.IsValid)
@@ -151,8 +156,10 @@ namespace BarKick.Controllers
         /// <example>
         /// POST: api/TeamData/DeleteTeam/5
         /// </example>
-        [ResponseType(typeof(Team))]
         [HttpPost]
+        [Route("api/TeamData/DeleteTeam/{id}")]
+        [ResponseType(typeof(Team))]
+        
         public IHttpActionResult DeleteTeam(int id)
         {
             Team team = db.Teams.Find(id);
