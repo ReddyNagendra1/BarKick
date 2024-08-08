@@ -160,6 +160,43 @@ namespace BarKick.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [ResponseType(typeof(List<BartenderDto>))]
+        [Route("api/BartenderData/ListBartendersByVenue/{id}")]
+        public IHttpActionResult ListBartendersByVenue(int id)
+        {
+            // Retrieve the list of bartenders associated with the specified venue
+            var bartenders = db.VenueBartenders
+                                .Where(vb => vb.VenueID == id)
+                                .Select(vb => vb.Bartender)
+                                .Include(b => b.VenueBartenders.Select(vb => vb.Venue))
+                                .ToList();
+
+            // Map the retrieved bartenders to a list of BartenderDto objects
+            var bartenderDtos = bartenders.Select(b => new BartenderDto
+            {
+                BartenderId = b.BartenderId,
+                FirstName = b.FirstName,
+                LastName = b.LastName,
+                Email = b.Email,
+                Venues = b.VenueBartenders.Select(vb => new VenueDto
+                {
+                    VenueID = vb.Venue.VenueID,
+                    // Add other necessary properties here
+                }).ToList()
+            }).ToList();
+
+            // Return the list of BartenderDto objects
+            return Ok(bartenderDtos);
+        }
+
+
+
+
+
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

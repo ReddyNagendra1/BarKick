@@ -3,17 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\deryn\\source\\repos\\BarKick\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\migrations\\202408021549284_venuesinbartenderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\migrations\\202408021549284_venuesinbartenderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BarKick_20240802123037/True/SqlTable/dbo.VenueBartenders.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\models\\viewmodels\\detailsbartender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\models\\viewmodels\\detailsbartender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BarKick_20240802123037/True/SqlTable/dbo.TeamVenues.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BarKick_20240802123037/True/SqlTable/dbo.Venues.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\bartender\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\bartender\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,8 +22,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "202408021549284_VenuesinBartenderDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Migrations\\202408021549284_VenuesinBartenderDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "BarKick\\Migrations\\202408021549284_VenuesinBartenderDetailsViewModel.cs",
+              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Migrations\\202408021549284_VenuesinBartenderDetailsViewModel.cs",
+              "RelativeToolTip": "BarKick\\Migrations\\202408021549284_VenuesinBartenderDetailsViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T15:49:34.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DetailsBartender.cs",
+              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Models\\ViewModels\\DetailsBartender.cs",
+              "RelativeDocumentMoniker": "BarKick\\Models\\ViewModels\\DetailsBartender.cs",
+              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Models\\ViewModels\\DetailsBartender.cs",
+              "RelativeToolTip": "BarKick\\Models\\ViewModels\\DetailsBartender.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T15:48:38.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\Details.cshtml",
+              "RelativeDocumentMoniker": "BarKick\\Views\\Bartender\\Details.cshtml",
+              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\Details.cshtml",
+              "RelativeToolTip": "BarKick\\Views\\Bartender\\Details.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABoAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T15:44:07.209Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
@@ -32,49 +70,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VenueController.cs",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Controllers\\VenueController.cs",
-              "RelativeDocumentMoniker": "BarKick\\Controllers\\VenueController.cs",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Controllers\\VenueController.cs",
-              "RelativeToolTip": "BarKick\\Controllers\\VenueController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAgwBUAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T08:37:38.086Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "dbo.VenueBartenders [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BarKick_20240802123037/True/SqlTable/dbo.VenueBartenders.sql",
-              "ToolTip": "dbo.VenueBartenders [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-08-02T08:32:39.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "dbo.TeamVenues [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BarKick_20240802123037/True/SqlTable/dbo.TeamVenues.sql",
-              "ToolTip": "dbo.TeamVenues [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-08-02T08:31:45.304Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "dbo.Venues [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BarKick_20240802123037/True/SqlTable/dbo.Venues.sql",
-              "ToolTip": "dbo.Venues [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-08-02T08:29:38.998Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -18,6 +18,17 @@
     <div>
         Email: @Model.SelectedBartender.Email
     </div>
+    <div>
+        <h4>Venues Employed at</h4> 
+            <ul>
+                @foreach (var venue in Model.VenueBartenders)
+                {
+                    <li>
+                        <a href="/Venue/Details/@venue.VenueID">@venue.Venue.VenueName (@venue.Venue.VenueLocation)</a>
+                    </li>
+                }
+            </ul>
+    </div>
     if (Model.CocktailsMade.Any())
     {
         <div style="margin-top: 20px;">

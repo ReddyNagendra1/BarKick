@@ -16,7 +16,7 @@ namespace BarKick.Models
 
     //Many teams plays in venues
     public virtual ICollection<Team> Teams { get; set; }
-    public virtual ICollection<Bartender> Bartenders { get; set; }
+    public virtual ICollection<VenueBartender> VenueBartenders { get; set; }
     }
     public class VenueDto
     {
@@ -29,5 +29,6 @@ namespace BarKick.Models
     public string VenueLocation { get; set; }
 
     public ICollection<TeamDto> Teams { get; set; }
+        public List<VenueDto> Venues { get; set; }
     }
 }

@@ -197,41 +197,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202408020443048_InitialCreate.cs" />
-    <Compile Include="Migrations\202408020443048_InitialCreate.Designer.cs">
-      <DependentUpon>202408020443048_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202408021533529_InitialCreate.cs" />
+    <Compile Include="Migrations\202408021533529_InitialCreate.Designer.cs">
+      <DependentUpon>202408021533529_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202408020452496_PlayerModel.cs" />
-    <Compile Include="Migrations\202408020452496_PlayerModel.Designer.cs">
-      <DependentUpon>202408020452496_PlayerModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202408020456350_playerTeamKey.cs" />
-    <Compile Include="Migrations\202408020456350_playerTeamKey.Designer.cs">
-      <DependentUpon>202408020456350_playerTeamKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202408020519411_FixedColName.cs" />
-    <Compile Include="Migrations\202408020519411_FixedColName.Designer.cs">
-      <DependentUpon>202408020519411_FixedColName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202408020538448_Venues.cs" />
-    <Compile Include="Migrations\202408020538448_Venues.Designer.cs">
-      <DependentUpon>202408020538448_Venues.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202408020540588_TeamtoVenue.cs" />
-    <Compile Include="Migrations\202408020540588_TeamtoVenue.Designer.cs">
-      <DependentUpon>202408020540588_TeamtoVenue.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202408020601519_CocktailnBartender.cs" />
-    <Compile Include="Migrations\202408020601519_CocktailnBartender.Designer.cs">
-      <DependentUpon>202408020601519_CocktailnBartender.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202408020608444_BartenderVenue.cs" />
-    <Compile Include="Migrations\202408020608444_BartenderVenue.Designer.cs">
-      <DependentUpon>202408020608444_BartenderVenue.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202408020830488_update.cs" />
-    <Compile Include="Migrations\202408020830488_update.Designer.cs">
-      <DependentUpon>202408020830488_update.cs</DependentUpon>
+    <Compile Include="Migrations\202408021549284_VenuesinBartenderDetailsViewModel.cs" />
+    <Compile Include="Migrations\202408021549284_VenuesinBartenderDetailsViewModel.Designer.cs">
+      <DependentUpon>202408021549284_VenuesinBartenderDetailsViewModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -241,6 +213,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\VenueBartender.cs" />
     <Compile Include="Models\Venue.cs" />
     <Compile Include="Models\ViewModels\AddTeamToVenueViewModel.cs" />
     <Compile Include="Models\ViewModels\DetailsBartender.cs" />
@@ -383,32 +356,11 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202408020443048_InitialCreate.resx">
-      <DependentUpon>202408020443048_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202408021533529_InitialCreate.resx">
+      <DependentUpon>202408021533529_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202408020452496_PlayerModel.resx">
-      <DependentUpon>202408020452496_PlayerModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202408020456350_playerTeamKey.resx">
-      <DependentUpon>202408020456350_playerTeamKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202408020519411_FixedColName.resx">
-      <DependentUpon>202408020519411_FixedColName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202408020538448_Venues.resx">
-      <DependentUpon>202408020538448_Venues.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202408020540588_TeamtoVenue.resx">
-      <DependentUpon>202408020540588_TeamtoVenue.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202408020601519_CocktailnBartender.resx">
-      <DependentUpon>202408020601519_CocktailnBartender.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202408020608444_BartenderVenue.resx">
-      <DependentUpon>202408020608444_BartenderVenue.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202408020830488_update.resx">
-      <DependentUpon>202408020830488_update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202408021549284_VenuesinBartenderDetailsViewModel.resx">
+      <DependentUpon>202408021549284_VenuesinBartenderDetailsViewModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

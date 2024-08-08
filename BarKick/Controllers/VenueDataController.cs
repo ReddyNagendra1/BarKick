@@ -9,7 +9,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using BarKick.Migrations;
 using BarKick.Models;
 
 
@@ -53,7 +52,6 @@ namespace BarKick.Controllers
         /// </example>
         [HttpGet]
         [ResponseType(typeof(VenueDto))]
-        [Route("api/VenueData/FindVenue/{id}")]
         public IHttpActionResult FindVenue(int id)
         {
             Venue Venue = db.Venues.Find(id);
@@ -83,7 +81,6 @@ namespace BarKick.Controllers
         /// </example>
         [ResponseType(typeof(void))]
         [HttpPost]
-        [Route("api/VenueData/UpdateVenue/{id}")]
         public IHttpActionResult UpdateVenue(int id, Venue venue)
         {
             Debug.WriteLine("I have reached the update venue method");
@@ -130,10 +127,8 @@ namespace BarKick.Controllers
         /// <example>
         /// POST: api/VenueData/AddVenue
         /// </example>
-        
-        [ResponseType(typeof(Venues))]
+        [ResponseType(typeof(Venue))]
         [HttpPost]
-        [Route("api/VenueData/AddVenue")]
         public IHttpActionResult AddVenue(Venue venue)
         {
             if (!ModelState.IsValid)
@@ -155,9 +150,8 @@ namespace BarKick.Controllers
         /// <example>
         /// POST: api/VenueData/DeleteVenue/5
         /// </example>
-        [ResponseType(typeof(Venues))]
+        [ResponseType(typeof(Venue))]
         [HttpPost]
-        [Route("api/VenueData/DeleteVenue/{id}")]
         public IHttpActionResult DeleteVenue(int id)
         {
             Venue venue = db.Venues.Find(id);

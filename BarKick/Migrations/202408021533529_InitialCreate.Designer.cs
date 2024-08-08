@@ -7,13 +7,13 @@ namespace BarKick.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class PlayerModel : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PlayerModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202408020452496_PlayerModel"; }
+            get { return "202408021533529_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
