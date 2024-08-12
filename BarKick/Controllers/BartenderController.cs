@@ -32,7 +32,7 @@ namespace BarKick.Controllers
 
             try
             {
-                string url = "bartenderdata/listbartenders";
+                string url = "BartenderData/ListBartenders";
                 HttpResponseMessage responseMessage = client.GetAsync(url).Result;
 
                 if (responseMessage.IsSuccessStatusCode)
@@ -58,7 +58,7 @@ namespace BarKick.Controllers
             DetailsBartender viewModel = new DetailsBartender();
 
             // Fetch bartender details
-            string url = "bartenderdata/findbartender/" + id;
+            string url = "BartenderData/FindBartender/" + id;
             HttpResponseMessage responseMessage = client.GetAsync(url).Result;
 
             if (responseMessage.IsSuccessStatusCode)
@@ -104,14 +104,14 @@ namespace BarKick.Controllers
             return View();
         }
 
-        // POST: bartenders/create
+        // POST: bartender/create
         [HttpPost]
         public async Task<ActionResult> Create(Bartender bartender)
         {
             Debug.WriteLine("the json payload is :");
             Debug.WriteLine(bartender.FirstName + bartender.LastName);
 
-            string url = "BartenderData/AddBartender";
+            string url = "bartenderdata/addbartender";
 
             string jsonpayload = serializer.Serialize(bartender);
             Debug.WriteLine(jsonpayload);
@@ -119,19 +119,17 @@ namespace BarKick.Controllers
             HttpContent content = new StringContent(jsonpayload, Encoding.UTF8, "application/json");
 
             HttpResponseMessage responseMessage = await client.PostAsync(url, content);
-
-            return RedirectToAction("List");
-            /*
+            
             if (responseMessage.IsSuccessStatusCode)
             {
-
+                return RedirectToAction("List");
             }
             else
             {
                 string error = await responseMessage.Content.ReadAsStringAsync();
                 Debug.WriteLine("Error: response message: " + error);
                 return RedirectToAction("Error");
-            } */
+            } 
         }
 
         // GET: bartender/edit/id
@@ -191,6 +189,41 @@ namespace BarKick.Controllers
                 Debug.WriteLine("Error: response message: " + error);
                 return RedirectToAction("Error");
             }
+        }
+
+
+        //POST: Bartender/Associate/{VenueID}
+        [HttpPost]
+        //[Authorize(Roles = "Admin")]
+        public ActionResult Associate(int id, int VenueID)
+        {
+            //GetApplicationCookie();//get token credentials
+            Debug.WriteLine("Attempting to associate bartender :" + id + " with venue " + VenueID);
+
+            //call our api to associate bartender with venue
+            string url = "BartenderData/AssociateBartenderWithVenue/" + id + "/" + VenueID;
+            HttpContent content = new StringContent("");
+            content.Headers.ContentType.MediaType = "application/json";
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+
+            return RedirectToAction("Details/" + id);
+        }
+
+
+        [HttpGet]
+        //[Authorize(Roles = "Admin")]
+        public ActionResult UnAssociate(int id, int VenueID)
+        {
+            //GetApplicationCookie();//get token credentials
+            Debug.WriteLine("Attempting to unassociate bartender :" + id + " with venue: " + VenueID);
+
+            //call our api to unassociate bartender with venue
+            string url = "BartenderData/UnassociateBartenderWithVenue/" + id + "/" + VenueID;
+            HttpContent content = new StringContent("");
+            content.Headers.ContentType.MediaType = "application/json";
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+
+            return RedirectToAction("Details/" + id);
         }
     }
 }

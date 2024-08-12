@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System;
 
 namespace BarKick.Controllers
 {
@@ -24,6 +25,7 @@ namespace BarKick.Controllers
         /// </example>
         // GET: api/bartenderdata/listbartenders
         [HttpGet]
+        [Route("api/BartenderData/ListBartenders")]
         [ResponseType(typeof(IEnumerable<BartenderDto>))]
         public IHttpActionResult ListBartenders()
         {
@@ -53,7 +55,7 @@ namespace BarKick.Controllers
         /// </example>
         // GET: api/BartenderData/FindBartender/id
         [HttpGet]
-        [Route("api/bartenderdata/findbartender/{id}")]
+        [Route("api/BartenderData/FindBartender/{id}")]
         [ResponseType(typeof(BartenderDto))]
         public IHttpActionResult FindBartender(int id)
         {
@@ -83,7 +85,7 @@ namespace BarKick.Controllers
         /// <returns>HttpStatus code</returns>
         // POST: api/bartenderdata/updateBartender/id
         [HttpPost]
-        [Route("api/bartenderdata/updatebartender/{id}")]
+        [Route("api/BartenderData/UpdateBartender/{id}")]
         [ResponseType(typeof(void))]
         public IHttpActionResult UpdateBartender(int id, [FromBody] Bartender b)
         {
@@ -127,17 +129,30 @@ namespace BarKick.Controllers
         [HttpPost]
         [Route("api/bartenderdata/addbartender")]
         [ResponseType(typeof(Bartender))]
-        public IHttpActionResult AddBartender([FromBody] Bartender Bartender)
+        public IHttpActionResult AddBartender([FromBody] Bartender bartender)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Bartenders.Add(Bartender);
+            db.Bartenders.Add(bartender);
             db.SaveChanges();
-            return CreatedAtRoute("DefaultApi", new { id = Bartender.BartenderId }, Bartender);
+
+            // Generate URL for the newly created resource
+            string url = Url.Link("DefaultApi", new { id = bartender.BartenderId });
+
+            if (url == null)
+            {
+                return InternalServerError(new InvalidOperationException("Route name not found."));
+            }
+
+            return Created(url, bartender);
         }
+
+
+
+
         /// <summary>
         /// Recieves a bartenderId and sends a post request to delete that bartender from the database
         /// </summary>
@@ -145,7 +160,7 @@ namespace BarKick.Controllers
         /// <returns>an Ok Http response</returns>
         // POST: api/BartenderData/DeleteBartender/id
         [HttpPost]
-        [Route("api/bartenderdata/deletebartender/{id}")]
+        [Route("api/BartenderData/DeleteBartender/{id}")]
         [ResponseType(typeof(Bartender))]
         public IHttpActionResult DeleteBartender(int id)
         {
@@ -161,37 +176,94 @@ namespace BarKick.Controllers
         }
 
         [HttpGet]
-        [ResponseType(typeof(List<BartenderDto>))]
-        [Route("api/BartenderData/ListBartendersByVenue/{id}")]
-        public IHttpActionResult ListBartendersByVenue(int id)
+        [ResponseType(typeof(BartenderDto))]
+        public IHttpActionResult ListBartendersForVenue(int id)
         {
-            // Retrieve the list of bartenders associated with the specified venue
-            var bartenders = db.VenueBartenders
-                                .Where(vb => vb.VenueID == id)
-                                .Select(vb => vb.Bartender)
-                                .Include(b => b.VenueBartenders.Select(vb => vb.Venue))
-                                .ToList();
+            //all animals that have keepers which match with our ID
+            List<Bartender> Bartenders = db.Bartenders.Where(
+                b => b.Venues.Any(
+                    v => v.VenueID == id
+                )).ToList();
+            List<BartenderDto> BartenderDtos = new List<BartenderDto>();
 
-            // Map the retrieved bartenders to a list of BartenderDto objects
-            var bartenderDtos = bartenders.Select(b => new BartenderDto
+            Bartenders.ForEach(b => BartenderDtos.Add(new BartenderDto()
             {
                 BartenderId = b.BartenderId,
                 FirstName = b.FirstName,
                 LastName = b.LastName,
-                Email = b.Email,
-                Venues = b.VenueBartenders.Select(vb => new VenueDto
-                {
-                    VenueID = vb.Venue.VenueID,
-                    // Add other necessary properties here
-                }).ToList()
-            }).ToList();
+                Email = b.Email
+            }));
 
-            // Return the list of BartenderDto objects
-            return Ok(bartenderDtos);
+            return Ok(BartenderDtos);
+        }
+
+        [HttpPost]
+        [Route("api/BartenderData/AssociateBartenderWithVenue/{BartenderId}/{VenueID}")]
+        //[Authorize(Roles = "Admin")]
+        public IHttpActionResult AssociateBartenderWithVenue(int BartenderId, int VenueID)
+        {
+            // Fetch the bartender including the related VenueBartenders
+            Bartender SelectedBartender = db.Bartenders.Include(b => b.Venues).FirstOrDefault(b => b.BartenderId == BartenderId);
+            Venue SelectedVenue = db.Venues.Find(VenueID);
+
+            if (SelectedBartender == null || SelectedVenue == null)
+            {
+                return NotFound();
+            }
+
+            // Debug information
+            Debug.WriteLine("input bartender id is: " + BartenderId);
+            Debug.WriteLine("selected bartender name is: " + SelectedBartender.FirstName + " " + SelectedBartender.LastName);
+            Debug.WriteLine("input Venue id is: " + VenueID);
+            Debug.WriteLine("selected venue name is: " + SelectedVenue.VenueName);
+
+            // Check if the association already exists
+            var existingAssociation = db.VenueBartenders
+                .FirstOrDefault(vb => vb.BartenderId == BartenderId && vb.VenueID == VenueID);
+
+            if (existingAssociation == null)
+            {
+                // Create a new VenueBartender entity
+                VenueBartender newAssociation = new VenueBartender
+                {
+                    BartenderId = BartenderId,
+                    VenueID = VenueID
+                };
+
+                // Add the association to the context
+                db.VenueBartenders.Add(newAssociation);
+                db.SaveChanges();
+            }
+
+            return Ok();
         }
 
 
 
+        [HttpPost]
+        [Route("api/BartenderData/UnAssociateBartenderWithVenue/{BartenderId}/{VenueID}")]
+        //[Authorize(Roles = "Admin")]
+        public IHttpActionResult UnAssociateBartenderWithVenue(int BartenderId, int VenueID)
+        {
+            // Fetch the existing association from the join table
+            var existingAssociation = db.VenueBartenders
+                .FirstOrDefault(vb => vb.BartenderId == BartenderId && vb.VenueID == VenueID);
+
+            if (existingAssociation == null)
+            {
+                return NotFound();
+            }
+
+            // Debug information
+            Debug.WriteLine("input bartender id is: " + BartenderId);
+            Debug.WriteLine("input Venue id is: " + VenueID);
+
+            // Remove the association
+            db.VenueBartenders.Remove(existingAssociation);
+            db.SaveChanges();
+
+            return Ok();
+        }
 
 
 

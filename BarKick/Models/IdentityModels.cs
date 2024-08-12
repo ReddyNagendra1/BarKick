@@ -48,13 +48,14 @@ namespace BarKick.Models
             // Define the relationships
             modelBuilder.Entity<VenueBartender>()
                 .HasRequired(vb => vb.Bartender)
-                .WithMany(b => b.VenueBartenders)
+                .WithMany(b => b.Venues)
                 .HasForeignKey(vb => vb.BartenderId);
 
             modelBuilder.Entity<VenueBartender>()
                 .HasRequired(vb => vb.Venue)
                 .WithMany(v => v.VenueBartenders)
                 .HasForeignKey(vb => vb.VenueID);
-        } 
+
+        }
     }
 }

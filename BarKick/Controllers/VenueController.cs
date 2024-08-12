@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
@@ -32,23 +35,59 @@ namespace BarKick.Controllers
         }
 
         // GET: Venue/Details/5
-        public ActionResult Details(int id)
+        [Route("Venue/Details/{id}")]
+        public async Task<ActionResult> Details(int id)
         {
-            AddTeamToVenueViewModel ViewModel = new AddTeamToVenueViewModel();
+            var viewModel = new DetailsVenue();
 
-            string url = "VenueData/FindVenue/" + id;
-            HttpResponseMessage response = client.GetAsync(url).Result;
-            VenueDto selectedVenue = response.Content.ReadAsAsync<VenueDto>().Result;
+            // Fetch the venue details
+            string venueUrl = $"VenueData/FindVenue/{id}"; // Use string interpolation
+            HttpResponseMessage venueResponse = await client.GetAsync(venueUrl);
+            if (!venueResponse.IsSuccessStatusCode)
+            {
+                // Handle error
+                return HttpNotFound();
+            }
+            VenueDto selectedVenue = await venueResponse.Content.ReadAsAsync<VenueDto>();
+            viewModel.Venue = selectedVenue;
 
-            ViewModel.Venue = selectedVenue;
+            // Fetch the list of teams associated with the venue
+            string teamsUrl = $"VenueData/ListTeamsForVenue/{id}"; // Use string interpolation
+            HttpResponseMessage teamsResponse = await client.GetAsync(teamsUrl);
+            if (!teamsResponse.IsSuccessStatusCode)
+            {
+                // Handle errors
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
+            }
+            IEnumerable<TeamDto> teams = await teamsResponse.Content.ReadAsAsync<IEnumerable<TeamDto>>();
+            viewModel.Teams = teams;
 
-            url = "TeamData/ListTeams";
-            response = client.GetAsync(url).Result;
-            IEnumerable<TeamDto> teams = response.Content.ReadAsAsync<IEnumerable<TeamDto>>().Result;
+            // Fetch the list of all bartenders associated with the venue
+            string bartendersUrl = $"VenueData/ListBartendersForVenue/{id}"; // Use string interpolation
+            HttpResponseMessage bartendersResponse = await client.GetAsync(bartendersUrl);
+            if (!bartendersResponse.IsSuccessStatusCode)
+            {
+                // Handle errors 
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
+            }
+            IEnumerable<BartenderDto> bartenders = await bartendersResponse.Content.ReadAsAsync<IEnumerable<BartenderDto>>();
+            viewModel.Bartenders = bartenders;
 
-            ViewModel.Teams = teams;
-            return View(ViewModel);
+            // Fetch the list of all available bartenders
+            string availableBartendersUrl = "BartenderData/ListBartenders"; // No need to include id here
+            HttpResponseMessage availableBartendersResponse = await client.GetAsync(availableBartendersUrl);
+            if (!availableBartendersResponse.IsSuccessStatusCode)
+            {
+                // Handle errors 
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
+            }
+            IEnumerable<BartenderDto> availableBartenders = await availableBartendersResponse.Content.ReadAsAsync<IEnumerable<BartenderDto>>();
+            viewModel.AvailableBartenders = availableBartenders;
+
+            return View(viewModel);
         }
+
+
 
 
         // GET: Venue/New
@@ -71,17 +110,12 @@ namespace BarKick.Controllers
             HttpContent content = new StringContent(jsonPayload);
             content.Headers.ContentType.MediaType = "application/json";
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-            if (response.IsSuccessStatusCode)
-            {
+
                 return RedirectToAction("List");
-            }
-            else
-            {
-                // Handling the error here and returning the view with model
-                ModelState.AddModelError("", "Unable to create venue. Try again later.");
-                return View(venueDto);
-            }
+          
         }
+    
+
 
         // GET: Venue/Edit/5
         public ActionResult Edit(int id)

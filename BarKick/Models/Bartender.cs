@@ -15,7 +15,8 @@ namespace BarKick.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public virtual ICollection<VenueBartender> VenueBartenders { get; set; }
+        //a bartender can work at many venues
+        public virtual ICollection<VenueBartender> Venues { get; set; }
     }
 
     //Data transfer object (DTO) - Communicating the bartenders info externally

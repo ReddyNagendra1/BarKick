@@ -52,6 +52,7 @@ namespace BarKick.Controllers
         /// </example>
         [HttpGet]
         [ResponseType(typeof(VenueDto))]
+        [Route("api/VenueData/FindVenue/{id}")]
         public IHttpActionResult FindVenue(int id)
         {
             Venue Venue = db.Venues.Find(id);
@@ -129,6 +130,7 @@ namespace BarKick.Controllers
         /// </example>
         [ResponseType(typeof(Venue))]
         [HttpPost]
+        [Route("api/VenueData/AddVenue")]
         public IHttpActionResult AddVenue(Venue venue)
         {
             if (!ModelState.IsValid)
@@ -136,11 +138,21 @@ namespace BarKick.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Venues.Add(venue);
-            db.SaveChanges();
+            try
+            {
+                db.Venues.Add(venue);
+                db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = venue.VenueID }, venue);
+                // Ensure "DefaultApi" route exists in route configuration
+                return CreatedAtRoute("DefaultApi", new { id = venue.VenueID }, venue);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception details
+                return InternalServerError(ex);
+            }
         }
+
 
         /// <summary>
         /// Deletes a specific venue by ID.
@@ -247,6 +259,102 @@ namespace BarKick.Controllers
 
             return Ok();
         }
+        [HttpGet]
+        [Route("api/VenueData/ListBartendersForVenue/{venueId}")]
+        public IHttpActionResult ListBartendersForVenue(int venueId)
+        {
+            // Check if venueId is valid
+            if (venueId <= 0)
+            {
+                return BadRequest("Invalid Venue ID");
+            }
+
+            // Retrieve the bartenders associated with the given venueId
+            var bartenders = db.VenueBartenders
+                               .Where(vb => vb.VenueID == venueId) // Use actual column names
+                               .Select(vb => vb.Bartender)  // Assuming the navigation property is correct
+                               .ToList();
+
+            if (!bartenders.Any())
+            {
+                return NotFound(); // Return 404 if no bartenders are found
+            }
+
+            // Convert the Bartender entities to BartenderDto
+            var bartenderDtos = bartenders.Select(b => new BartenderDto()
+            {
+                BartenderId = b.BartenderId,
+                FirstName = b.FirstName,
+                LastName = b.LastName,
+                Email = b.Email
+            }).ToList();
+
+            return Ok(bartenderDtos); // Return 200 OK with the list of bartender DTOs
+        }
+
+
+
+
+        [HttpPost]
+        [Route("api/VenueData/AddBartenderToVenue/{venueId}/{bartenderId}")]
+        public IHttpActionResult AddBartenderToVenue(int venueId, int bartenderId)
+        {
+            Venue venue = db.Venues.Find(venueId);
+            Bartender bartender = db.Bartenders.Find(bartenderId);
+
+            if (venue == null || bartender == null)
+            {
+                return NotFound();
+            }
+
+            // Check if the relationship already exists to avoid duplicates
+            bool exists = db.VenueBartenders.Any(vb => vb.VenueID == venueId && vb.BartenderId == bartenderId);
+            if (!exists)
+            {
+                // Create a new VenueBartender entity
+                VenueBartender venueBartender = new VenueBartender
+                {
+                    VenueID = venueId,
+                    BartenderId = bartenderId
+                };
+
+                // Add the new relationship to the database
+                db.VenueBartenders.Add(venueBartender);
+                db.SaveChanges();
+            }
+
+            return Ok();
+        }
+
+
+        [HttpPost]
+        [Route("api/VenueData/RemoveBartenderFromVenue/{venueId}/{bartenderId}")]
+        public IHttpActionResult RemoveBartenderFromVenue(int venueId, int bartenderId)
+        {
+            Venue venue = db.Venues.Find(venueId);
+            Bartender bartender = db.Bartenders.Find(bartenderId);
+
+            if (venue == null || bartender == null)
+            {
+                return NotFound();
+            }
+
+            // Find the specific VenueBartender entry that you want to remove
+            VenueBartender venueBartender = db.VenueBartenders
+                                               .FirstOrDefault(vb => vb.VenueID == venueId && vb.BartenderId == bartenderId);
+
+            if (venueBartender == null)
+            {
+                return NotFound();
+            }
+
+            // Remove the VenueBartender entry from the database
+            db.VenueBartenders.Remove(venueBartender);
+            db.SaveChanges();
+
+            return Ok();
+        }
+
 
         protected override void Dispose(bool disposing)
         {

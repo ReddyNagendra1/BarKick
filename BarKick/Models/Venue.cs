@@ -29,6 +29,6 @@ namespace BarKick.Models
     public string VenueLocation { get; set; }
 
     public ICollection<TeamDto> Teams { get; set; }
-        public List<VenueDto> Venues { get; set; }
+    public List<VenueDto> Venues { get; set; }
     }
 }

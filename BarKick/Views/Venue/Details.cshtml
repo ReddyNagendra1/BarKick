@@ -1,4 +1,4 @@
-﻿﻿@model BarKick.Models.ViewModels.AddTeamToVenueViewModel
+﻿@model BarKick.Models.ViewModels.DetailsVenue
 
 @{
     ViewBag.Title = "Details";
@@ -14,9 +14,57 @@
 
 <h2>@Model.Venue.VenueName</h2>
 <div>Location: @Model.Venue.VenueLocation</div>
+
+<h3>Teams:</h3>
 <div>
     @foreach (var team in Model.Teams)
     {
-        <h2><a href="/Team/Details/@team.TeamID">@team.TeamName</a></h2>
+        <div>
+            <a href="/Team/Details/@team.TeamID">@team.TeamName</a>
+            <form method="post" action="/Venue/UnassociateTeam">
+                <input type="hidden" name="venueId" value="@Model.Venue.VenueID" />
+                <input type="hidden" name="teamId" value="@team.TeamID" />
+                <input type="submit" value="Unassociate" class="btn btn-danger" />
+            </form>
+        </div>
     }
+    <h4>Add New Team:</h4>
+    <form method="post" action="/Venue/AssociateTeam">
+        <input type="hidden" name="venueId" value="@Model.Venue.VenueID" />
+        <select name="teamId">
+            <option value="">Select Team</option>
+            @foreach (var team in ViewBag.AllTeams) // Populate with all available teams
+            {
+                <option value="@team.TeamID">@team.TeamName</option>
+            }
+        </select>
+        <input type="submit" value="Add Team" class="btn btn-primary" />
+    </form>
+</div>
+
+<h3>Bartenders:</h3>
+<div>
+    @foreach (var bartender in Model.Bartenders)
+    {
+        <div>
+            <a href="/Bartender/Details/@bartender.BartenderId">@bartender.FirstName @bartender.LastName</a>
+            <form method="post" action="/Venue/UnassociateBartender">
+                <input type="hidden" name="venueId" value="@Model.Venue.VenueID" />
+                <input type="hidden" name="bartenderId" value="@bartender.BartenderId" />
+                <input type="submit" value="Unassociate" class="btn btn-danger" />
+            </form>
+        </div>
+    }
+    <h4>Add New Bartender:</h4>
+    <form method="post" action="/Venue/AssociateBartender">
+        <input type="hidden" name="venueId" value="@Model.Venue.VenueID" />
+        <select name="bartenderId">
+            <option value="">Select Bartender</option>
+            @foreach (var bartender in Model.AvailableBartenders) // Populate with all available bartenders
+            {
+                <option value="@bartender.BartenderId">@bartender.FirstName @bartender.LastName</option>
+            }
+        </select>
+        <input type="submit" value="Add Bartender" class="btn btn-primary" />
+    </form>
 </div>
