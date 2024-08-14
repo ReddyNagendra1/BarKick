@@ -127,7 +127,7 @@ namespace BarKick.Controllers
         /// </returns>
         // POST: api/bartenderdata/addbartender
         [HttpPost]
-        [Route("api/bartenderdata/addbartender")]
+        [Route("api/BartenderData/AddBartender")]
         [ResponseType(typeof(Bartender))]
         public IHttpActionResult AddBartender([FromBody] Bartender bartender)
         {
@@ -176,31 +176,34 @@ namespace BarKick.Controllers
         }
 
         [HttpGet]
-        [ResponseType(typeof(BartenderDto))]
-        public IHttpActionResult ListBartendersForVenue(int id)
+        [Route("api/BartenderData/ListVenuesForBartender/{id}")]
+        [ResponseType(typeof(VenueDto))]
+        public IHttpActionResult ListVenuesForBartender(int id)
         {
-            //all animals that have keepers which match with our ID
-            List<Bartender> Bartenders = db.Bartenders.Where(
-                b => b.Venues.Any(
-                    v => v.VenueID == id
+            // Fetch all venues that are associated with the bartender whose ID matches the provided ID
+            List<Venue> Venues = db.Venues.Where(
+                v => v.VenueBartenders.Any(
+                    b => b.BartenderId == id
                 )).ToList();
-            List<BartenderDto> BartenderDtos = new List<BartenderDto>();
 
-            Bartenders.ForEach(b => BartenderDtos.Add(new BartenderDto()
+            List<VenueDto> VenueDtos = new List<VenueDto>();
+
+            // Map the Venue entities to VenueDto objects
+            Venues.ForEach(v => VenueDtos.Add(new VenueDto()
             {
-                BartenderId = b.BartenderId,
-                FirstName = b.FirstName,
-                LastName = b.LastName,
-                Email = b.Email
+                VenueID = v.VenueID,
+                VenueName = v.VenueName,
+                VenueLocation = v.VenueLocation
             }));
 
-            return Ok(BartenderDtos);
+            return Ok(VenueDtos);
         }
 
+
         [HttpPost]
-        [Route("api/BartenderData/AssociateBartenderWithVenue/{BartenderId}/{VenueID}")]
+        [Route("api/BartenderData/AssociateVenue/{BartenderId}/{VenueID}")]
         //[Authorize(Roles = "Admin")]
-        public IHttpActionResult AssociateBartenderWithVenue(int BartenderId, int VenueID)
+        public IHttpActionResult AssociateVenue(int BartenderId, int VenueID)
         {
             // Fetch the bartender including the related VenueBartenders
             Bartender SelectedBartender = db.Bartenders.Include(b => b.Venues).FirstOrDefault(b => b.BartenderId == BartenderId);
@@ -241,9 +244,9 @@ namespace BarKick.Controllers
 
 
         [HttpPost]
-        [Route("api/BartenderData/UnAssociateBartenderWithVenue/{BartenderId}/{VenueID}")]
+        [Route("api/BartenderData/UnAssociateVenue/{BartenderId}/{VenueID}")]
         //[Authorize(Roles = "Admin")]
-        public IHttpActionResult UnAssociateBartenderWithVenue(int BartenderId, int VenueID)
+        public IHttpActionResult UnAssociateVenue(int BartenderId, int VenueID)
         {
             // Fetch the existing association from the join table
             var existingAssociation = db.VenueBartenders

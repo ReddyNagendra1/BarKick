@@ -232,7 +232,7 @@ namespace BarKick.Controllers
         {
             Debug.WriteLine("Attempting to associate bartender :" + id + " with venue " + VenueID);
 
-            string url = "BartenderData/AssociateBartenderWithVenue/" + id + "/" + VenueID;
+            string url = "BartenderData/AssociateVenue/" + id + "/" + VenueID;
             HttpContent content = new StringContent("");
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
@@ -240,12 +240,12 @@ namespace BarKick.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Details", new { id = VenueID });
+                return RedirectToAction("Details/" + VenueID);
             }
             else
             {
                 ModelState.AddModelError("", "Failed to associate bartender with the venue.");
-                return RedirectToAction("Details", new { id = VenueID });
+                return RedirectToAction("Details/" + VenueID);
             }
         }
 
@@ -254,7 +254,7 @@ namespace BarKick.Controllers
         {
             Debug.WriteLine("Attempting to unassociate bartender :" + id + " with venue: " + VenueID);
 
-            string url = "BartenderData/UnassociateBartenderWithVenue/" + id + "/" + VenueID;
+            string url = "BartenderData/UnassociateVenue/" + id + "/" + VenueID;
             HttpContent content = new StringContent("");
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
@@ -262,12 +262,12 @@ namespace BarKick.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Details", new { id = VenueID });
+                return RedirectToAction("Details/" + VenueID);
             }
             else
             {
                 ModelState.AddModelError("", "Failed to unassociate bartender from the venue.");
-                return RedirectToAction("Details", new { id = VenueID });
+                return RedirectToAction("Details/" + VenueID);
             }
         }
 
