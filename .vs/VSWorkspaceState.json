@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BarKick\\Controllers",
+    "\\BarKick\\Migrations",
+    "\\BarKick\\Models",
+    "\\BarKick\\Views",
+    "\\BarKick\\Views\\Bartender"
   ],
+  "SelectedNode": "\\BarKick.sln",
   "PreviewInSolutionExplorer": false
 }

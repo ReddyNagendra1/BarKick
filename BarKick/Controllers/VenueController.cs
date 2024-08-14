@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -41,9 +42,10 @@ namespace BarKick.Controllers
             var viewModel = new DetailsVenue();
 
             // Fetch the venue details
-            string venueUrl = $"VenueData/FindVenue/{id}"; // Use string interpolation
+            string venueUrl = $"VenueData/FindVenue/{id}"; 
             HttpResponseMessage venueResponse = await client.GetAsync(venueUrl);
-            if (!venueResponse.IsSuccessStatusCode)
+            
+             if (!venueResponse.IsSuccessStatusCode)
             {
                 // Handle error
                 return HttpNotFound();
@@ -52,35 +54,41 @@ namespace BarKick.Controllers
             viewModel.Venue = selectedVenue;
 
             // Fetch the list of teams associated with the venue
-            string teamsUrl = $"VenueData/ListTeamsForVenue/{id}"; // Use string interpolation
+            string teamsUrl = $"VenueData/ListTeamsForVenue/{id}"; 
             HttpResponseMessage teamsResponse = await client.GetAsync(teamsUrl);
-            if (!teamsResponse.IsSuccessStatusCode)
+            /*if (!teamsResponse.IsSuccessStatusCode)
             {
                 // Handle errors
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
-            }
+            }*/
             IEnumerable<TeamDto> teams = await teamsResponse.Content.ReadAsAsync<IEnumerable<TeamDto>>();
             viewModel.Teams = teams;
 
+            // Fetch the list of all available teams
+            string availableTeamsUrl = "TeamData/ListTeams";
+            HttpResponseMessage availableTeamsResponse = await client.GetAsync(availableTeamsUrl);
+            IEnumerable<TeamDto> availableTeams = await availableTeamsResponse.Content.ReadAsAsync<IEnumerable<TeamDto>>();
+            viewModel.AvailableTeams = availableTeams;
+
             // Fetch the list of all bartenders associated with the venue
-            string bartendersUrl = $"VenueData/ListBartendersForVenue/{id}"; // Use string interpolation
+            string bartendersUrl = $"VenueData/ListBartendersForVenue/{id}";
             HttpResponseMessage bartendersResponse = await client.GetAsync(bartendersUrl);
-            if (!bartendersResponse.IsSuccessStatusCode)
+            /*if (!bartendersResponse.IsSuccessStatusCode)
             {
                 // Handle errors 
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
-            }
+            }*/
             IEnumerable<BartenderDto> bartenders = await bartendersResponse.Content.ReadAsAsync<IEnumerable<BartenderDto>>();
             viewModel.Bartenders = bartenders;
 
             // Fetch the list of all available bartenders
-            string availableBartendersUrl = "BartenderData/ListBartenders"; // No need to include id here
+            string availableBartendersUrl = "BartenderData/ListBartenders"; 
             HttpResponseMessage availableBartendersResponse = await client.GetAsync(availableBartendersUrl);
-            if (!availableBartendersResponse.IsSuccessStatusCode)
+            /*if (!availableBartendersResponse.IsSuccessStatusCode)
             {
                 // Handle errors 
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
-            }
+            }*/
             IEnumerable<BartenderDto> availableBartenders = await availableBartendersResponse.Content.ReadAsAsync<IEnumerable<BartenderDto>>();
             viewModel.AvailableBartenders = availableBartenders;
 
@@ -174,7 +182,7 @@ namespace BarKick.Controllers
             IEnumerable<TeamDto> teams = response.Content.ReadAsAsync<IEnumerable<TeamDto>>().Result;
             return View(teams);
         }
-
+/*
         // GET: Venue/AddTeamToVenue/5
         public ActionResult AddTeamToVenue(int id)
         {
@@ -193,7 +201,7 @@ namespace BarKick.Controllers
             };
 
             return View(viewModel);
-        }
+        }*/
 
         // POST: Venue/AddTeamToVenue
         [HttpPost]
@@ -216,5 +224,52 @@ namespace BarKick.Controllers
             HttpResponseMessage response = client.PostAsync(url, content).Result;
             return RedirectToAction("Details", new { id = venueId });
         }
+
+
+        //POST: Bartender/Associate/{VenueID}
+        [HttpPost]
+        public ActionResult AssociateBartender(int id, int VenueID)
+        {
+            Debug.WriteLine("Attempting to associate bartender :" + id + " with venue " + VenueID);
+
+            string url = "BartenderData/AssociateBartenderWithVenue/" + id + "/" + VenueID;
+            HttpContent content = new StringContent("");
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Details", new { id = VenueID });
+            }
+            else
+            {
+                ModelState.AddModelError("", "Failed to associate bartender with the venue.");
+                return RedirectToAction("Details", new { id = VenueID });
+            }
+        }
+
+        [HttpPost] 
+        public ActionResult UnassociateBartender(int id, int VenueID)
+        {
+            Debug.WriteLine("Attempting to unassociate bartender :" + id + " with venue: " + VenueID);
+
+            string url = "BartenderData/UnassociateBartenderWithVenue/" + id + "/" + VenueID;
+            HttpContent content = new StringContent("");
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Details", new { id = VenueID });
+            }
+            else
+            {
+                ModelState.AddModelError("", "Failed to unassociate bartender from the venue.");
+                return RedirectToAction("Details", new { id = VenueID });
+            }
+        }
+
     }
 }

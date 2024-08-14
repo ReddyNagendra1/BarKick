@@ -225,6 +225,10 @@
     <Compile Include="Migrations\202408120333380_updatedModels.Designer.cs">
       <DependentUpon>202408120333380_updatedModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408141835463_UpdatedVenueDetailsViewModel.cs" />
+    <Compile Include="Migrations\202408141835463_UpdatedVenueDetailsViewModel.Designer.cs">
+      <DependentUpon>202408141835463_UpdatedVenueDetailsViewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bartender.cs" />
@@ -400,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408120333380_updatedModels.resx">
       <DependentUpon>202408120333380_updatedModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408141835463_UpdatedVenueDetailsViewModel.resx">
+      <DependentUpon>202408141835463_UpdatedVenueDetailsViewModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

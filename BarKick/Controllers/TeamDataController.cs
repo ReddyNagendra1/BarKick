@@ -83,7 +83,7 @@ namespace BarKick.Controllers
         /// POST: api/TeamData/UpdateTeam/5
         /// </example>
         [HttpPost]
-        [Route("api/TeamData/AddTeam")]
+        [Route("api/TeamData/UpdateTeam/{id}")]
         [ResponseType(typeof(void))]
        
         public IHttpActionResult UpdateTeam(int id, Team team)
@@ -133,7 +133,7 @@ namespace BarKick.Controllers
         /// POST: api/TeamData/AddTeam
         /// </example>
         [HttpPost]
-        [Route("api/TeamData/UpdateTeam/{id}")]
+        [Route("api/TeamData/AddTeam")]
         [ResponseType(typeof(Team))]
        
         public IHttpActionResult AddTeam(Team team)

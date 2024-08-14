@@ -1,4 +1,13 @@
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.AssemblyReference.cache
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.InitialCreate.resources
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.VenuesinBartenderDetailsViewModel.resources
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.updatedDetailsBartender.resources
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.BartenderVenueRelationshipUpdate.resources
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.AddedDetailsVenueViewModel.resources
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.updatedVenueDetailsViewModel.resources
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.updatedModels.resources
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.UpdatedVenueDetailsViewModell.resources
+C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.GenerateResource.cache
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.CoreCompileInputs.cache
 C:\Users\deryn\source\repos\BarKick\BarKick\bin\BarKick.dll.config
 C:\Users\deryn\source\repos\BarKick\BarKick\bin\BarKick.dll
@@ -112,11 +121,3 @@ C:\Users\deryn\source\repos\BarKick\BarKick\bin\Microsoft.CodeDom.Providers.DotN
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.Up2Date
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.dll
 C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.pdb
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.InitialCreate.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.csproj.GenerateResource.cache
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.VenuesinBartenderDetailsViewModel.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.updatedDetailsBartender.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.BartenderVenueRelationshipUpdate.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.AddedDetailsVenueViewModel.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.updatedVenueDetailsViewModel.resources
-C:\Users\deryn\source\repos\BarKick\BarKick\obj\Debug\BarKick.Migrations.updatedModels.resources

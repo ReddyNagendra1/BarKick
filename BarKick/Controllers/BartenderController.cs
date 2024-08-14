@@ -190,40 +190,5 @@ namespace BarKick.Controllers
                 return RedirectToAction("Error");
             }
         }
-
-
-        //POST: Bartender/Associate/{VenueID}
-        [HttpPost]
-        //[Authorize(Roles = "Admin")]
-        public ActionResult Associate(int id, int VenueID)
-        {
-            //GetApplicationCookie();//get token credentials
-            Debug.WriteLine("Attempting to associate bartender :" + id + " with venue " + VenueID);
-
-            //call our api to associate bartender with venue
-            string url = "BartenderData/AssociateBartenderWithVenue/" + id + "/" + VenueID;
-            HttpContent content = new StringContent("");
-            content.Headers.ContentType.MediaType = "application/json";
-            HttpResponseMessage response = client.PostAsync(url, content).Result;
-
-            return RedirectToAction("Details/" + id);
-        }
-
-
-        [HttpGet]
-        //[Authorize(Roles = "Admin")]
-        public ActionResult UnAssociate(int id, int VenueID)
-        {
-            //GetApplicationCookie();//get token credentials
-            Debug.WriteLine("Attempting to unassociate bartender :" + id + " with venue: " + VenueID);
-
-            //call our api to unassociate bartender with venue
-            string url = "BartenderData/UnassociateBartenderWithVenue/" + id + "/" + VenueID;
-            HttpContent content = new StringContent("");
-            content.Headers.ContentType.MediaType = "application/json";
-            HttpResponseMessage response = client.PostAsync(url, content).Result;
-
-            return RedirectToAction("Details/" + id);
-        }
     }
 }
