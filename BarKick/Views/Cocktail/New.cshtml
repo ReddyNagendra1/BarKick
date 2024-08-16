@@ -6,23 +6,23 @@
 
 <h2>Add a Cocktail</h2>
 <form action="/Cocktail/Create" method="POST">
-    <div>
+    <div class="m-2">
         <label for="drinkNameInput">Cocktail Name:</label>
         <input type="text" id="drinkNameInput" name="DrinkName" required />
     </div>
-    <div>
+    <div class="m-2">
         <label for="drinkRecipeInput">Recipe:</label>
         <input type="text" id="drinkRecipeInput" name="DrinkRecipe" required />
     </div>
-    <div>
+    <div class="m-2">
         <label for="liqInInput">Alcoholic Ingredients:</label>
         <input type="text" id="liqInInput" name="LiqIn" required />
     </div>
-    <div>
+    <div class="m-2">
         <label for="mixInInput">Mix Ingredients:</label>
         <input type="text" id="mixInInput" name="MixIn" required />
     </div>
-    <div>
+    <div class="m-2">
         <label for="bartenderIdInput">Select Bartender:</label>
         <select id="bartenderIdInput" name="BartenderId" required>
             <option disabled selected hidden>--Select-Bartender--</option>
@@ -32,5 +32,8 @@
             }
         </select>
     </div>
-    <button type="submit">Add Cocktail</button>
+    <button class="m-2 btn btn-success" type="submit">Add Cocktail</button>
 </form>
+<div>
+    <a href="/Cocktail/List">Back to List</a>
+</div>

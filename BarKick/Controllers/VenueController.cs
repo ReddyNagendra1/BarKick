@@ -143,15 +143,16 @@ namespace BarKick.Controllers
             HttpContent content = new StringContent(jsonPayload);
             content.Headers.ContentType.MediaType = "application/json";
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-            if (response.IsSuccessStatusCode)
-            {
+            
+            /*if (response.IsSuccessStatusCode)
+            { */
                 return RedirectToAction("List");
-            }
+            /*}
             else
             {
                 ModelState.AddModelError("", "Unable to update venue. Try again later.");
                 return View("Edit", venueDto);
-            }
+            } */
         }
 
         // GET: Venue/DeleteConfirm/5

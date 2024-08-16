@@ -8,14 +8,14 @@
 
 <form action="/Venue/Update/@Model.VenueID" method="POST">
     <input type="hidden" name="VenueID" value="@Model.VenueID" />
-    <div>
+    <div class="m-2">
         <label>Name: </label><input type="text" name="VenueName" value="@Model.VenueName" />
     </div>
-    <div>
-        <label>Location: </label><textarea name="VenueLocation">@Model.VenueLocation</textarea>
+    <div class="m-2">
+        <label>Location: </label><input type="text" name="VenueLocation" value="@Model.VenueLocation" />
     </div>
     <div>
-        <input type="submit" value="Update Venue" />
+        <input class="m-2 btn btn-primary" type="submit" value="Update Venue" />
     </div>
 </form>
 <div>

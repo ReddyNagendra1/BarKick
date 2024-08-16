@@ -122,6 +122,11 @@ namespace BarKick.Controllers
             return View(viewModel);
         }
 
+        // GET: Bartender/New
+        public ActionResult New()
+        {
+            return View();
+        }
 
         // POST: bartender/create
         [HttpPost]
@@ -130,7 +135,7 @@ namespace BarKick.Controllers
             Debug.WriteLine("the json payload is :");
             Debug.WriteLine(bartender.FirstName + bartender.LastName);
 
-            string url = "bartenderdata/addbartender";
+            string url = "BartenderData/AddBartender";
 
             string jsonpayload = serializer.Serialize(bartender);
             Debug.WriteLine(jsonpayload);
@@ -138,17 +143,19 @@ namespace BarKick.Controllers
             HttpContent content = new StringContent(jsonpayload, Encoding.UTF8, "application/json");
 
             HttpResponseMessage responseMessage = await client.PostAsync(url, content);
-            
+            /*
             if (responseMessage.IsSuccessStatusCode)
             {
+            */
                 return RedirectToAction("List");
+            /*
             }
             else
             {
                 string error = await responseMessage.Content.ReadAsStringAsync();
                 Debug.WriteLine("Error: response message: " + error);
                 return RedirectToAction("Error");
-            } 
+            } */
         }
 
         // GET: bartender/edit/id
@@ -253,6 +260,11 @@ namespace BarKick.Controllers
                 ModelState.AddModelError("", "Failed to unassociate bartender from the venue.");
                 return RedirectToAction("Details/"+ id);
             }
+        }
+
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }

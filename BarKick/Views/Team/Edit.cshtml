@@ -8,14 +8,14 @@
 
 <form action="/Team/Update/@Model.TeamID" method="POST">
     <input type="hidden" name="TeamID" value="@Model.TeamID" />
-    <div>
+    <div class="m-2">
         <label>Name: </label><input type="text" name="TeamName" value="@Model.TeamName" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Bio: </label><textarea name="TeamBio">@Model.TeamBio</textarea>
     </div>
     <div>
-        <input type="submit" value="Update Team" />
+        <input class="m-2 btn btn-primary"type="submit" value="Update Team" />
     </div>
 </form>
 <div>

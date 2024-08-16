@@ -12,12 +12,14 @@
 </head>
 <body>
     <div>
-        <h2>Are you sure you want to delete this Bartender?</h2>
-        <a href="/Bartender/List">Cancel</a>
-        <h3>Name: @Model.FirstName @Model.LastName</h3>
+        <h2>Are you sure you want to delete this bartender?</h2>
+        <p>Name: @Model.FirstName @Model.LastName</p>
         <form action="/Bartender/Delete/@Model.BartenderId" method="POST">
-            <input type="submit" value="Confirm Delete" />
+            <input class="btn btn-danger" type="submit" value="Confirm Delete" />
         </form>
+        <div class="mt-4">
+            <a href="/Bartender/Details/@Model.BartenderId">Cancel</a>
+        </div>
     </div>
 </body>
 </html>

@@ -6,8 +6,8 @@
 
 
 <h2>List of Teams</h2>
-<a href="/Team/Create">New Team</a>
+<a class="btn-success btn mb-2" href="/Team/Create">Add a New Team</a>
 @foreach (var team in Model)
 {
-    <h2><a href="/Team/Details/@team.TeamID">@team.TeamName</a></h2>
+    <div><a href="/Team/Details/@team.TeamID">@team.TeamName</a></div>
 }

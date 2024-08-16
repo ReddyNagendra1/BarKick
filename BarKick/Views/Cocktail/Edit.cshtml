@@ -9,23 +9,23 @@
     <div style="display:none;">
         <input type="number" name="DrinkId" value="@Model.SelectedCocktail.DrinkId" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Cocktail Name:</label>
         <input type="text" name="DrinkName" value="@Model.SelectedCocktail.DrinkName" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Drink Recipe:</label>
         <input type="text" name="DrinkRecipe" value="@Model.SelectedCocktail.DrinkRecipe" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Alcoholic Ingredients:</label>
         <input type="text" name="LiqIn" value="@Model.SelectedCocktail.LiqIn" />
     </div>
-    <div>
-        <label>Mix Ingredients:</label>
+    <div class="m-2">
+        <label>Mix Ingredient:</label>
         <input type="text" name="MixIn" value="@Model.SelectedCocktail.MixIn" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Select Bartender:</label>
         <select name="BartenderId">
             <option selected value="@Model.SelectedCocktail.BartenderId">@Model.SelectedCocktail.FirstName @Model.SelectedCocktail.LastName</option>
@@ -35,5 +35,10 @@
             }
         </select>
     </div>
-    <button type="submit">Update Cocktail</button>
+    <button class="m-2 btn btn-primary" type="submit">Update Cocktail</button>
 </form>
+
+<div>
+    <a href="/Cockatil/List">Back to List</a> |
+    <a href="/Cocktail/DeleteConfirm/@Model.SelectedCocktail.DrinkId">Delete</a>
+</div>

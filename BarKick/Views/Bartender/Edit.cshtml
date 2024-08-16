@@ -17,19 +17,23 @@
             <div style="display:none;">
                 <input type="text" name="BartenderId" value="@Model.BartenderId" />
             </div>
-            <div>
+            <div class="m-2">
                 <label>First Name:</label> <input type="text" name="FirstName" value="@Model.FirstName" />
             </div>
-            <div>
+            <div class="m-2">
                 <label>Last Name:</label> <input type="text" name="LastName" value="@Model.LastName" />
             </div>
-            <div>
+            <div class="m-2">
                 <label>Email:</label> <input type="email" name="Email" value="@Model.Email" />
             </div>
             <div>
-                <input type="submit" value="Update Bartender" />
+                <input class="m-2 btn btn-primary" type="submit" value="Update Bartender" />
             </div>
         </form>
+        <div>
+            <a href="/Bartender/List">Back to List</a> |
+            <a href="/Bartender/DeleteConfirm/@Model.BartenderId">Delete</a>
+        </div>
     </div>
 </body>
 </html>

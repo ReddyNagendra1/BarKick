@@ -5,13 +5,13 @@
 
 <h2>Create Player</h2>
 <form action="/Player/Create" method="POST">
-    <div>
+    <div class="m-2">
         <label>Name: </label><input type="text" name="PlayerName" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Position: </label><input type="text" name="PlayerPosition" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Team: </label>
         <select name="TeamID">
             @foreach (var team in ViewBag.Teams as List<BarKick.Models.Team>)
@@ -21,6 +21,9 @@
         </select>
     </div>
     <div>
-        <input type="submit" value="Add Player" />
+        <input class="m-2 btn btn-success" type="submit" value="Add Player" />
     </div>
 </form>
+<div>
+    <a href="/Player/List">Back to List</a>
+</div>

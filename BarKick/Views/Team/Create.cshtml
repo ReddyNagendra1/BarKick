@@ -6,13 +6,16 @@
 
 <h2>Create Team</h2>
 <form action="/Team/Create" method="POST">
-    <div>
-        <label>Name: </label><input type="text" name="TeamName" />
+    <div class="m-2">
+        <label>Name: </label><input type="text" name="TeamName" required/>
+    </div>
+    <div class="m-2">
+        <label>Bio: </label><textarea name="TeamBio" required></textarea>
     </div>
     <div>
-        <label>Bio: </label><textarea name="TeamBio"></textarea>
-    </div>
-    <div>
-        <input type="submit" value="Add Team" />
+        <input class="m-2 btn btn-success" type="submit" value="Add Team" />
     </div>
 </form>
+<div>
+    <a href="/Team/List">Back to List</a>
+</div>

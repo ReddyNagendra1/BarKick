@@ -14,19 +14,21 @@
 <body>
     <h1>Create a Bartender</h1>
     <form action="/Bartender/Create" method="POST">
-        <div>
+        <div class="m-2">
             <label>First Name:</label> <input type="text" name="FirstName" />
         </div>
-        <div>
+        <div class="m-2">
             <label>Last Name:</label> <input type="text" name="LastName" />
         </div>
-        <div>
+        <div class="m-2">
             <label>Email:</label> <input type="text" name="Email" />
         </div>
         <div>
-            <input type="submit" value="Create Bartender" />
-
+            <input class="m-2 btn btn-success" type="submit" value="Add Bartender" />
         </div>
     </form>
+    <div>
+        <a href="/Bartender/List">Back to List</a>
+    </div>
 </body>
 </html>

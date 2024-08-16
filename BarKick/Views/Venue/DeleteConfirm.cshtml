@@ -4,21 +4,12 @@
     ViewBag.Title = "Delete Venue";
 }
 
-<a href="/Venue/List">Go Back to List</a>
-<h2>Delete Venue</h2>
+<h2>Are you sure you want to delete this venue?</h2>
+<p>Name: @Model.VenueName, @Model.VenueLocation</p>
 
-<h3>Are you sure you want to delete this venue?</h3>
-<div>
-    <h4>Venue Details</h4>
-    <hr />
-    <dl>
-        <dt>Name:</dt>
-        <dd>@Model.VenueName</dd>
-        <dt>Location:</dt>
-        <dd>@Model.VenueLocation</dd>
-    </dl>
-
-    <form action="/Venue/Delete/@Model.VenueID" method="POST">
-        <input type="submit" value="Delete" />
-    </form>
+<form action="/Venue/Delete/@Model.VenueID" method="POST">
+    <input class="btn btn-danger" type="submit" value="Delete" />
+</form>
+<div class="mt-4">
+    <a class="m-2" href="/Venue/Details/@Model.VenueID">Cancel</a>
 </div>

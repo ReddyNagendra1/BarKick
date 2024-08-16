@@ -13,14 +13,15 @@
 </head>
 <body>
     <div>
-        <h2>Are you sure you want to remove this cocktail?</h2>
-        <a href="/Cocktail/List">Cancel</a>
-        <h2>@Model.DrinkName by @Model.FirstName @Model.LastName</h2>
+        <h2>Are you sure you want to delete this cocktail?</h2>
+        <p>@Model.DrinkName made by @Model.FirstName @Model.LastName</p>
 
         <form action="/cocktail/Delete/@Model.DrinkId" method="POST">
-            <input type="submit" value="Confirm Delete" />
-
+            <input class="btn btn-danger" type="submit" value="Confirm Delete" />
         </form>
+        <div class="mt-4">
+            <a class="m-2" href="/Cocktail/Details/@Model.DrinkId">Cancel</a>
+        </div>
     </div>
 </body>
 </html>

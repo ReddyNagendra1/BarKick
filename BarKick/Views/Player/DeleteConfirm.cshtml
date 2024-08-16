@@ -3,26 +3,12 @@
     ViewBag.Title = "Delete";
 }
 
-<a href="/Player/List">Go Back to List</a>
-<h2>Delete Player</h2>
+<h2>Are you sure you want to delete this player?</h2>
 
-<h3>Are you sure you want to delete this player?</h3>
-<div>
-    <h4>Player Details</h4>
-    <hr />
-    <dl>
-        <dt>Name:</dt>
-        <dd>@Model.PlayerName</dd>
-        <dt>Position:</dt>
-        <dd>@Model.PlayerPosition</dd>
-        <dt>Team:</dt>
-        <dd>@Model.TeamName</dd>
-    </dl>
-
+    <p>Name: @Model.PlayerName</p>
     <form action="/Player/Delete/@Model.PlayerID" method="POST">
-        <input type="submit" value="Delete" />
+        <input class="btn btn-danger" type="submit" value="Delete" />
     </form>
-</div>
-<div>
-    <a href="/Player/Edit/@Model.PlayerID">Edit</a>
-</div>
+    <div class="mt-4">
+        <a href="/Player/Details/@Model.PlayerID">Cancel</a>
+    </div>

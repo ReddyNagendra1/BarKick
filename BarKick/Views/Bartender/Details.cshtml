@@ -5,19 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Bartender Details</h1>
+<h1>@Model.SelectedBartender.FirstName @Model.SelectedBartender.LastName</h1>
 
 <div>
     <a class="btn btn-primary" href="~/Bartender/Edit/@Model.SelectedBartender.BartenderId">Update Bartender</a>
     <a class="btn btn-danger" href="~/Bartender/DeleteConfirm/@Model.SelectedBartender.BartenderId">Delete Bartender</a>
-    <a class="btn btn-info" href="~/Bartender/List">Return to Bartender List</a>
+    <a class="btn btn-secondary" href="~/Bartender/List">Return to Bartender List</a>
 </div>
 
 @if (Model.SelectedBartender != null)
 {
     <div class="mt-3">
-        <h4>Name:</h4>
-        <p>@Model.SelectedBartender.FirstName @Model.SelectedBartender.LastName</p>
         <h4>Email:</h4>
         <p>@Model.SelectedBartender.Email</p>
 
@@ -32,7 +30,7 @@
                             <form method="post" action="/Bartender/UnassociateVenue">
                             <input type="hidden" name="VenueID" value="@venue.VenueID" />
                             <input type="hidden" name="id" value="@Model.SelectedBartender.BartenderId" />
-                            <input type="submit" value="Unassociate" class="btn btn-danger" />
+                            <input type="submit" value="Remove from @venue.VenueName" class="mt-2 btn btn-danger" />
                         </form>
                     </li>
                 }
@@ -48,7 +46,7 @@
                     <div class="form-group">
                         <label for="VenueID">Associate with Venue:</label>
                         <select id="VenueID" name="VenueID" class="form-control">
-                            <option value="">Select Venue</option>
+                            <option value="">Select a Venue</option>
                             @if (Model.AvailableVenues != null && Model.AvailableVenues.Any())
                             {
                                 foreach (var venue in Model.AvailableVenues)
@@ -62,7 +60,7 @@
                             }
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Add Venue</button>
+                    <button type="submit" class="btn btn-success mt-2">Hire at Venue</button>
                 </form>
             </div>
 

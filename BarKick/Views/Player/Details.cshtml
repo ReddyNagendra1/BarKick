@@ -4,16 +4,10 @@
 @{
     ViewBag.Title = "Details";
 }
-
-
-<nav>
-    <ul>
-        <li><a href="/Player/List">Go back to list</a></li>
-        <li><a href="/Player/Edit/@Model.PlayerID">Edit</a></li>
-        <li><a style="color:#ab2020;" href="/Player/DeleteConfirm/@Model.PlayerID">Delete</a></li>
-    </ul>
-</nav>
-
 <h2>@Model.PlayerName</h2>
+<a class="btn btn-primary" href="~/Player/Edit/@Model.PlayerID">Update Player</a>
+<a class="btn btn-danger" href="~/Player/DeleteConfirm/@Model.PlayerID">Delete Player</a>
+<a class="btn btn-secondary" href="~/Player/List"> Return to Player List</a>
+
 <div>Position: @Model.PlayerPosition</div>
 <div>Team: @Model.TeamName</div>

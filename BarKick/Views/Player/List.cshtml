@@ -3,11 +3,12 @@
     ViewBag.Title = "List";
 }
 
-<h2>List</h2>
-<a href="/Player/New">NewPlayer</a>
-@foreach (var player in Model)
-{
-    <h2><a href="/Player/Details/@player.PlayerID">@player.PlayerName</a></h2>
-    <div>Position:@player.PlayerPosition</div>
-    <div>Team:@player.TeamName</div>
-}
+<h2>List of Players</h2>
+<a class="btn-success btn mb-2" href="/Player/New">Add a New Player</a>
+<div>
+    @foreach (var player in Model)
+    {
+        <div><a href="/Player/Details/@player.PlayerID">@player.PlayerName</a></div>
+
+    }
+</div>

@@ -3,20 +3,17 @@
     ViewBag.Title = "Edit";
 }
 
-
-
-
 <h2>UpdatePlayer</h2>
 
 <form action="/Player/Update/@Model.PlayerID" method="POST">
     <input type="hidden" name="PlayerID" value="@Model.PlayerID" />
-    <div>
+    <div class="m-2">
         <label>Name: </label><input type="text" name="PlayerName" value="@Model.PlayerName" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Position: </label><input type="text" name="PlayerPosition" value="@Model.PlayerPosition" />
     </div>
-    <div>
+    <div class="m-2">
         <label>Team: </label>
         <select name="TeamID">
             @foreach (var team in ViewBag.Teams)
@@ -26,7 +23,7 @@
         </select>
     </div>
     <div>
-        <input type="submit" value="Update Player" />
+        <input class="m-2 btn btn-primary" type="submit" value="Update Player" />
     </div>
 </form>
 <div>

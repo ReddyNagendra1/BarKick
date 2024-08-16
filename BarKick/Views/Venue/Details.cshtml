@@ -2,16 +2,12 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<nav>
-    <ul>
-        <li><a href="/Venue/List">Go back to list</a></li>
-        <li><a href="/Venue/Edit/@Model.Venue.VenueID">Edit</a></li>
-        <li><a style="color:#ab2020;" href="/Venue/DeleteConfirm/@Model.Venue.VenueID">Delete</a></li>
-    </ul>
-</nav>
-
 <h2>@Model.Venue.VenueName</h2>
+
+<a class="btn btn-primary" href="~/Venue/Edit/@Model.Venue.VenueID">Update Venue</a>
+<a class="btn btn-danger" href="~/Venue/DeleteConfirm/@Model.Venue.VenueID">Delete Venue</a>
+<a class="btn btn-secondary" href="~/Venue/List"> Return to Venue List</a>
+
 <div>Location: @Model.Venue.VenueLocation</div>
 
 <h3>Teams:</h3>
@@ -55,14 +51,14 @@
     {
         foreach (var bartender in Model.Bartenders)
         {
-           <div>
-               <a href="/Bartender/Details/@bartender.BartenderId">@bartender.FirstName @bartender.LastName</a>
-               <form method="post" action="/Venue/UnassociateBartender">
-                   <input type="hidden" name="VenueID" value="@Model.Venue.VenueID" />
-                   <input type="hidden" name="id" value="@bartender.BartenderId" />
-                   <input type="submit" value="Unassociate" class="btn btn-danger" />
-               </form>
-           </div>
+            <div>
+                <a href="/Bartender/Details/@bartender.BartenderId">@bartender.FirstName @bartender.LastName</a>
+                <form method="post" action="/Venue/UnassociateBartender">
+                    <input type="hidden" name="VenueID" value="@Model.Venue.VenueID" />
+                    <input type="hidden" name="id" value="@bartender.BartenderId" />
+                    <input type="submit" value="Unassociate" class="btn btn-danger" />
+                </form>
+            </div>
         }
     }
     else
@@ -80,7 +76,7 @@
                 <option value="@bartender.BartenderId">@bartender.FirstName @bartender.LastName</option>
             }
         </select>
-        <input type="submit" value="Add Bartender" class="btn btn-primary" />
+        <input type="submit" value="Hire Bartender" class="btn btn-primary" />
     </form>
 
 </div>

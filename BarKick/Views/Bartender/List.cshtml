@@ -6,11 +6,11 @@
 }
 
 <h2>List of Bartenders</h2>
-<a href="~/Bartender/New">Add a New Bartender!</a>
+<a class="btn-success btn mb-2" href="~/Bartender/New">Add a New Bartender</a>
 
 @if (Model.Any())
 {
-    <div id="bartender-list">
+    <div id="bartender-list list-group">
         @foreach (var bartender in Model)
         {
             <div>
