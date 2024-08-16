@@ -3,52 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\deryn\\source\\repos\\BarKick\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\controllers\\venuedatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\controllers\\venuedatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\venue\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\venue\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\team\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\team\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\bartender\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\bartender\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\cocktail\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\cocktail\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\player\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\player\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\venue\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\venue\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\team\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\team\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\cocktail\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\cocktail\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\player\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\player\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\bartender\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\bartender\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\bartender\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\bartender\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|c:\\users\\deryn\\source\\repos\\barkick\\barkick\\views\\bartender\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7233E61-D63A-4559-9612-29E9E383F425}|BarKick\\BarKick.csproj|solutionrelative:barkick\\views\\bartender\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VenueDataController.cs",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Controllers\\VenueDataController.cs",
-              "RelativeDocumentMoniker": "BarKick\\Controllers\\VenueDataController.cs",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Controllers\\VenueDataController.cs",
-              "RelativeToolTip": "BarKick\\Controllers\\VenueDataController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAKoAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T19:11:33.742Z",
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\Error.cshtml",
+              "RelativeDocumentMoniker": "BarKick\\Views\\Bartender\\Error.cshtml",
+              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\Error.cshtml",
+              "RelativeToolTip": "BarKick\\Views\\Bartender\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-16T19:15:29.817Z",
               "EditorCaption": ""
             },
             {
@@ -84,149 +40,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DeleteConfirm.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Venue\\DeleteConfirm.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Venue\\DeleteConfirm.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Venue\\DeleteConfirm.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Venue\\DeleteConfirm.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T19:09:22.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DeleteConfirm.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Team\\DeleteConfirm.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Team\\DeleteConfirm.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Team\\DeleteConfirm.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Team\\DeleteConfirm.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T19:06:40.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DeleteConfirm.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Cocktail\\DeleteConfirm.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Cocktail\\DeleteConfirm.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Cocktail\\DeleteConfirm.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Cocktail\\DeleteConfirm.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:57:44.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeleteConfirm.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\DeleteConfirm.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Bartender\\DeleteConfirm.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\DeleteConfirm.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Bartender\\DeleteConfirm.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:54:22.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeleteConfirm.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Player\\DeleteConfirm.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Player\\DeleteConfirm.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Player\\DeleteConfirm.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Player\\DeleteConfirm.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:53:49.158Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "New.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Venue\\New.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Venue\\New.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Venue\\New.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Venue\\New.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:50:25.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Team\\Create.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Team\\Create.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Team\\Create.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Team\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:48:45.552Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "New.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Player\\New.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Player\\New.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Player\\New.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Player\\New.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:47:15.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "New.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Cocktail\\New.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Cocktail\\New.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Cocktail\\New.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Cocktail\\New.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:45:11.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "New.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\New.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Bartender\\New.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\New.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Bartender\\New.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:42:05.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\Edit.cshtml",
-              "RelativeDocumentMoniker": "BarKick\\Views\\Bartender\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\deryn\\source\\repos\\BarKick\\BarKick\\Views\\Bartender\\Edit.cshtml",
-              "RelativeToolTip": "BarKick\\Views\\Bartender\\Edit.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAADwvyEAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-16T18:22:06.984Z",
-              "EditorCaption": ""
             }
           ]
         }
