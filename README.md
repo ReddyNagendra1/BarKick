@@ -1,4 +1,3 @@
-![img1](https://github.com/user-attachments/assets/463da0bf-cc3f-4104-b4da-a670e9470bc4)
 # 🍸 BarKick
 
 BarKick is a comprehensive management application designed to track football players, teams, venues, bartenders, and cocktails. It's the perfect solution for managing the intricate relationships between sports venues and their hospitality services.
@@ -49,7 +48,6 @@ BarKick is a comprehensive management application designed to track football pla
 
 
 ### Screenshots
-![img1](https://github.com/user-attachments/assets/64570666-bf7e-4312-b624-6acb459df4b6)
-<img src="https://github.com/user-attachments/assets/64570666-bf7e-4312-b624-6acb459df4b6" width="100" height="100">
+<img src="https://github.com/user-attachments/assets/64570666-bf7e-4312-b624-6acb459df4b6" width="250" height="250">
 
 
