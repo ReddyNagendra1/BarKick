@@ -48,5 +48,5 @@ BarKick is a comprehensive management application designed to track football pla
 
 
 ### Screenshots
-![image](https://github.com/user-attachments/assets/a0d73af7-0d00-4826-86f2-029a7681d312) | width=100
+![image](https://github.com/user-attachments/assets/a0d73af7-0d00-4826-86f2-029a7681d312 |width=100) 
 
