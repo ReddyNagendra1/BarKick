@@ -45,3 +45,8 @@ BarKick is a comprehensive management application designed to track football pla
 - 🥃 Alcoholic ingredient (string LiqIn)
 - 🧉 Non-alcoholic ingredient (string MixIn)
 - 👨‍🍳 Bartender who created it (Bartender Bartender)
+
+
+### Screenshots
+![image](https://github.com/user-attachments/assets/a0d73af7-0d00-4826-86f2-029a7681d312)
+
